@@ -1,7 +1,6 @@
 import { convertToDays, caseReported, raiseToPowValue } from './helperFunctions';
 
 const covid19ImpactEstimator = (data) => {
-
   const { reportedCases, periodType, timeToElapse } = data;
   const impact = {};
   const severeImpact = {};
@@ -21,5 +20,4 @@ const covid19ImpactEstimator = (data) => {
     severeImpact
   };
 };
-
 export default covid19ImpactEstimator;
