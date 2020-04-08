@@ -23,9 +23,10 @@ const covid19ImpactEstimator = (data) => {
   impact.severeCasesByRequestedTime = 0.15 * impact.infectionsByRequestedTime;
   severeImpact.severeCasesByRequestedTime = 0.15 * severeImpact.infectionsByRequestedTime;
   // challenge 2 question 2
-  impact.hospitalBedsByRequestedTime = totalHospitalBeds - impact.severeCasesByRequestedTime;
+  const im = impact.severeCasesByRequestedTime;
+  impact.hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - im;
   const sev = severeImpact.severeCasesByRequestedTime;
-  severeImpact.hospitalBedsByRequestedTime = totalHospitalBeds - sev;
+  severeImpact.hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - sev;
   return {
     data: { ...data },
     impact,
