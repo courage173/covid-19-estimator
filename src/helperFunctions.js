@@ -22,7 +22,3 @@ export const raiseToPowValue = (days) => {
   }
   return days;
 };
-
-export const calculatePercentage = (val, perce) => {
-  return val * perce;
-};
