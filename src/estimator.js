@@ -4,8 +4,10 @@ import {
 } from './helperFunctions';
 
 const covid19ImpactEstimator = (data) => {
-  const { reportedCases, periodType, timeToElapse,
-    totalHospitalBeds } = data;
+  const {
+    reportedCases, periodType, timeToElapse,
+    totalHospitalBeds
+  } = data;
   const impact = {};
   const severeImpact = {};
 
