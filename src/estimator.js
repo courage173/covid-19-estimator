@@ -8,7 +8,8 @@ import {
 
 const covid19ImpactEstimator = (data) => {
   const {
-    reportedCases, periodType,
+    reportedCases,
+    periodType,
     timeToElapse,
     totalHospitalBeds
   } = data;
