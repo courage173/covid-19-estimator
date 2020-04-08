@@ -33,17 +33,17 @@ const covid19ImpactEstimator = (data) => {
   const sev = severeImpact.severeCasesByRequestedTime;
   severeImpact.hospitalBedsByRequestedTime = totalHospitalBeds * 0.35 - sev;
   // challenge 3
-  impact.casesForICUByRequestedTime = impact.infectionsByRequestedTime * 0.05;
-  severeImpact.casesForICUByRequestedTime = severeImpact.infectionsByRequestedTime * 0.05;
+  // impact.casesForICUByRequestedTime = impact.infectionsByRequestedTime * 0.05;
+  // severeImpact.casesForICUByRequestedTime = severeImpact.infectionsByRequestedTime * 0.05;
 
-  impact.casesForVentilatorsByRequestedTime = impact.infectionsByRequestedTime * 0.02;
-  severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime * 0.02;
+  // impact.casesForVentilatorsByRequestedTime = impact.infectionsByRequestedTime * 0.02;
+  // severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime * 0.02;
 
-  const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
-  const income = avgDailyIncomeInUSD;
-  const pop = avgDailyIncomePopulation;
-  impact.dollarsInFlight = impact.infectionsByRequestedTime * pop * income * days;
-  severeImpact.dollarsInFlight = severeImpact.infectionsByRequestedTime * pop * income * days;
+  // const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
+  // const income = avgDailyIncomeInUSD;
+  // const pop = avgDailyIncomePopulation;
+  // impact.dollarsInFlight = impact.infectionsByRequestedTime * pop * income * days;
+  // severeImpact.dollarsInFlight = severeImpact.infectionsByRequestedTime * pop * income * days;
 
   return {
     data: { ...data },
