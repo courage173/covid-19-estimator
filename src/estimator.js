@@ -4,7 +4,8 @@ import {
 } from './helperFunctions';
 
 const covid19ImpactEstimator = (data) => {
-  const { reportedCases, periodType, timeToElapse, totalHospitalBeds } = data;
+  const { reportedCases, periodType, timeToElapse,
+    totalHospitalBeds } = data;
   const impact = {};
   const severeImpact = {};
 
@@ -21,7 +22,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.severeCasesByRequestedTime = 0.15 * severeImpact.infectionsByRequestedTime;
   // challenge 2 question 2
   impact.hospitalBedsByRequestedTime = totalHospitalBeds - impact.severeCasesByRequestedTime;
-  const sev = severeImpact.severeCasesByRequestedTime
+  const sev = severeImpact.severeCasesByRequestedTime;
   severeImpact.hospitalBedsByRequestedTime = totalHospitalBeds - sev;
   return {
     data: { ...data },
