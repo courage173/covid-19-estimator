@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 
 export const caseReported = (value, mult) => value * mult;
 
@@ -16,7 +17,7 @@ export const convertToDays = (periodType, timeToElapse) => {
 
 export const raiseToPowValue = (days) => {
   if (days > 2) {
-    const val = parseInt(days / 2, 10);
+    const val = parseInt(days / 3, 10);
     return 2 ** val;
   }
   return days;
