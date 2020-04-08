@@ -37,7 +37,7 @@ const covid19ImpactEstimator = (data) => {
   // severeImpact.casesForICUByRequestedTime = severeImpact.infectionsByRequestedTime * 0.05;
 
   // impact.casesForVentilatorsByRequestedTime = impact.infectionsByRequestedTime * 0.02;
-  // severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime * 0.02;
+  // severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime*0.02;
 
   // const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
   // const income = avgDailyIncomeInUSD;
