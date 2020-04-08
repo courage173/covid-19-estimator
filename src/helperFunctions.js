@@ -6,7 +6,7 @@ export const convertToDays = (periodType, timeToElapse) => {
     case 'days':
       return timeToElapse;
     case 'weeks':
-      return timeToElapse * 7
+      return timeToElapse * 7;
     case 'months':
       return timeToElapse * 30;
     default:
@@ -16,7 +16,7 @@ export const convertToDays = (periodType, timeToElapse) => {
 
 export const raiseToPowValue = (days) => {
   if (days > 2) {
-    const val = parseInt(days / 2);
+    const val = parseInt(days / 2, 10);
     return 2 ** val;
   }
   return days;
