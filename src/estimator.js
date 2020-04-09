@@ -31,17 +31,17 @@ const covid19ImpactEstimator = (data) => {
   const sev = severeImpact.severeCasesByRequestedTime;
   severeImpact.hospitalBedsByRequestedTime = parseInt((totalHospitalBeds * 0.35) - sev, 10);
   // challenge 3
-  impact.casesForICUByRequestedTime = impact.infectionsByRequestedTime * 0.05;
-  severeImpact.casesForICUByRequestedTime = severeImpact.infectionsByRequestedTime * 0.05;
+  impact.casesForICUByRequestedTime = parseInt(impact.infectionsByRequestedTime * 0.05, 10);
+  severeImpact.casesForICUByRequestedTime = parseInt(severeImpact.infectionsByRequestedTime * 0.05, 10);
 
-  impact.casesForVentilatorsByRequestedTime = impact.infectionsByRequestedTime * 0.02;
-  severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime * 0.02;
+  impact.casesForVentilatorsByRequestedTime = parseInt(impact.infectionsByRequestedTime * 0.02, 10);
+  severeImpact.casesForVentilatorsByRequestedTime = parseInt(severeImpact.infectionsByRequestedTime * 0.02, 10);
   // average daily income generator new assess
   const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
   const income = avgDailyIncomeInUSD;
   const pop = avgDailyIncomePopulation;
-  impact.dollarsInFlight = impact.infectionsByRequestedTime * pop * income * days;
-  severeImpact.dollarsInFlight = severeImpact.infectionsByRequestedTime * pop * income * days;
+  impact.dollarsInFlight = parseInt(impact.infectionsByRequestedTime * pop * income * days, 10);
+  severeImpact.dollarsInFlight = parseInt(severeImpact.infectionsByRequestedTime * pop * income * days, 10);
 
   return {
     data: { ...data },
