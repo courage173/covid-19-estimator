@@ -38,7 +38,7 @@ const covid19ImpactEstimator = (data) => {
 
   impact.casesForVentilatorsByRequestedTime = impact.infectionsByRequestedTime * 0.02;
   severeImpact.casesForVentilatorsByRequestedTime = severeImpact.infectionsByRequestedTime * 0.02;
-  // average daily income generator
+  // average daily income generator new assess
   const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
   const income = avgDailyIncomeInUSD;
   const pop = avgDailyIncomePopulation;
