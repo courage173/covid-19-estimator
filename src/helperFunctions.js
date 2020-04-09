@@ -1,5 +1,3 @@
-/* eslint-disable linebreak-style */
-
 export const caseReported = (value, mult) => value * mult;
 
 export const convertToDays = (periodType, timeToElapse) => {

@@ -1,5 +1,3 @@
-/* eslint-disable no-trailing-spaces */
-/* eslint-disable linebreak-style */
 import {
   convertToDays,
   caseReported,
@@ -29,9 +27,9 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.severeCasesByRequestedTime = 0.15 * severeImpact.infectionsByRequestedTime;
   // challenge 2 question 2
   const im = impact.severeCasesByRequestedTime;
-  impact.hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - im;
+  impact.hospitalBedsByRequestedTime = parseInt((totalHospitalBeds * 0.35) - im, 10);
   const sev = severeImpact.severeCasesByRequestedTime;
-  severeImpact.hospitalBedsByRequestedTime = (totalHospitalBeds * 0.35) - sev;
+  severeImpact.hospitalBedsByRequestedTime = parseInt((totalHospitalBeds * 0.35) - sev, 10);
   // challenge 3
   impact.casesForICUByRequestedTime = impact.infectionsByRequestedTime * 0.05;
   severeImpact.casesForICUByRequestedTime = severeImpact.infectionsByRequestedTime * 0.05;
