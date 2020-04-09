@@ -21,5 +21,4 @@ export const raiseToPowValue = (days) => {
     return 2 ** val;
   }
   return days;
-
 };
