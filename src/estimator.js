@@ -23,8 +23,8 @@ const covid19ImpactEstimator = (data) => {
   impact.infectionsByRequestedTime = raiseToPow * impact.currentlyInfected;
   severeImpact.infectionsByRequestedTime = raiseToPow * severeImpact.currentlyInfected;
   // challenge 2 question 1
-  impact.severeCasesByRequestedTime = 0.15 * impact.infectionsByRequestedTime;
-  severeImpact.severeCasesByRequestedTime = 0.15 * severeImpact.infectionsByRequestedTime;
+  impact.severeCasesByRequestedTime = parseInt(0.15 * impact.infectionsByRequestedTime, 10);
+  severeImpact.severeCasesByRequestedTime = parseInt(0.15 * severeImpact.infectionsByRequestedTime, 10);
   // challenge 2 question 2
   const im = impact.severeCasesByRequestedTime;
   impact.hospitalBedsByRequestedTime = parseInt((totalHospitalBeds * 0.35) - im, 10);
@@ -43,9 +43,9 @@ const covid19ImpactEstimator = (data) => {
   const income = avgDailyIncomeInUSD;
   const pop = avgDailyIncomePopulation;
   const impactDol = impact.infectionsByRequestedTime;
-  impact.dollarsInFlight = parseInt((impactDol * pop * income * days).toFixed(2), 10);
+  impact.dollarsInFlight = parseFloat((impactDol * pop * income * days).toFixed(2), 10);
   const sevDol = severeImpact.infectionsByRequestedTime;
-  severeImpact.dollarsInFlight = parseInt((sevDol * pop * income * days).toFixed(2), 10);
+  severeImpact.dollarsInFlight = parseFloat((sevDol * pop * income * days).toFixed(2), 10);
 
   return {
     data: { ...data },
