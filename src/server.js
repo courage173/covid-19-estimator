@@ -1,12 +1,12 @@
 import http from 'http';
-import app from './backend/app'
+import app from './backend/app';
 
-
+const server = http.createServer(app);
 
 const normalizePort = (val) => {
   const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (Number.isNaN(port)) {
     return val;
   }
   if (port >= 0) {
@@ -36,8 +36,6 @@ const errorHandler = (error) => {
       throw error;
   }
 };
-
-const server = http.createServer(app);
 
 server.on('error', errorHandler);
 server.on('listening', () => {
