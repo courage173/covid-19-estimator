@@ -36,16 +36,16 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForICUByRequestedTime = parseInt(sevICU * 0.05, 10);
 
   impact.casesForVentilatorsByRequestedTime = parseInt(impact.infectionsByRequestedTime * 0.02, 10);
-  // what is the error
   const sevVent = severeImpact.infectionsByRequestedTime;
   severeImpact.casesForVentilatorsByRequestedTime = parseInt(sevVent * 0.02, 10);
   // average daily income generator new assess
   const { avgDailyIncomeInUSD, avgDailyIncomePopulation } = data.region;
   const income = avgDailyIncomeInUSD;
   const pop = avgDailyIncomePopulation;
-  impact.dollarsInFlight = (impact.infectionsByRequestedTime * pop * income * days).toFixed(2);
+  const impactDol = impact.infectionsByRequestedTime;
+  impact.dollarsInFlight = parseFloat(impactDol * pop * income * days).toFixed(2);
   const sevDol = severeImpact.infectionsByRequestedTime;
-  severeImpact.dollarsInFlight = (sevDol * pop * income * days).toFixed(2);
+  severeImpact.dollarsInFlight = parseFloat(sevDol * pop * income * days).toFixed(2);
 
   return {
     data: { ...data },
