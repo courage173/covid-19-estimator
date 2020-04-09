@@ -36,6 +36,7 @@ const covid19ImpactEstimator = (data) => {
   severeImpact.casesForICUByRequestedTime = parseInt(sevICU * 0.05, 10);
 
   impact.casesForVentilatorsByRequestedTime = parseInt(impact.infectionsByRequestedTime * 0.02, 10);
+  // what is the error
   const sevVent = severeImpact.infectionsByRequestedTime;
   severeImpact.casesForVentilatorsByRequestedTime = parseInt(sevVent * 0.02, 10);
   // average daily income generator new assess
