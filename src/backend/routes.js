@@ -1,5 +1,5 @@
 import express from 'express';
-import convert from 'xml-js';
+import xml2js from 'xml2js';
 import fs from 'fs';
 import path from 'path';
 import covid19ImpactEstimator from '../estimator';
@@ -9,7 +9,8 @@ import logger from './middleware/logger';
 const router = express.Router();
 
 router.post('/', logger, (req, res) => {
-  res.status(200).send('welcome to the estimator');
+  const convid = covid19ImpactEstimator(req.body);
+  res.status(200).send(convid);
 });
 
 router.post('/json', logger, (req, res) => {
@@ -19,9 +20,10 @@ router.post('/json', logger, (req, res) => {
 
 router.post('/xml', logger, (req, res) => {
   const convid = covid19ImpactEstimator(req.body);
-  const options = { compact: true, ignoreComment: true, spaces: 4 };
-  const result = convert.json2xml(convid, options);
-  res.status(200).send(result);
+  const builder = new xml2js.Builder();
+  const xml = builder.buildObject(convid);
+  res.type('application/xml');
+  res.status(200).send(xml);
 });
 
 router.post('/logs', (req, res) => {
