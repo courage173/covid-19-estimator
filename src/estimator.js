@@ -44,9 +44,9 @@ const covid19ImpactEstimator = (data) => {
   const income = region.avgDailyIncomeInUSD;
   const pop = region.avgDailyIncomePopulation;
   const impactDol = impact.infectionsByRequestedTime;
-  impact.dollarsInFlight = parseFloat((impactDol * pop * income * days).toFixed(2));
+  impact.dollarsInFlight = parseInt((impactDol * pop * income * days), 10);
   const sevDol = severeImpact.infectionsByRequestedTime;
-  severeImpact.dollarsInFlight = parseFloat((sevDol * pop * income * days).toFixed(2));
+  severeImpact.dollarsInFlight = parseInt((sevDol * pop * income * days), 10);
 
   return {
     data: { ...data },
