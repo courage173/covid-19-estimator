@@ -7,7 +7,7 @@ const logger = (req, res, next) => {
   res.on('finish', () => {
     const t = new Date().getTime();
     const timeDiff = t - time;
-    const data = `\n${time}\t\t${reqPath}\t\tdone in ${timeDiff} seconds`;
+    const data = `\n${time}\t\t${reqPath}\t\t${res.statusCode}\t\t${timeDiff} ms`;
     fs.appendFile(path.join(process.cwd(), '/src/requests.log'), data, (error) => {
       if (error) {
         throw error;

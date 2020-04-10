@@ -31,7 +31,7 @@ router.post('/logs', (req, res) => {
     if (err) {
       throw err;
     }
-    return res.status(200).send(data);
+    return res.status(200).send(data.toLocaleString());
   });
 });
 
