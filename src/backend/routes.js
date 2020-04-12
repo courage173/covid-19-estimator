@@ -24,7 +24,7 @@ router.post('/xml', (req, res) => {
   res.status(200).send(xml);
 });
 
-router.post('/logs', (req, res) => {
+router.get('/logs', (req, res) => {
   res.set('content-type', 'text/plain');
   fs.readFile(path.join(process.cwd(), '/src/requests.log'), (err, data) => {
     if (err) {
